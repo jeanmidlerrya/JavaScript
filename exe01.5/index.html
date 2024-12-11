@@ -9,6 +9,7 @@
             background-color: lightskyblue;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 18px;
+            color: w;
         }
     </style>
 </head>
@@ -16,9 +17,23 @@
     <h1>O que é DOM e sua função?</h1>
     <p>aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p>
-    <div>clique em mim</div>
+    <div id="msg">clique em mim</div>
 
     <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write('conseguemos poxa: ' + p1.innerHTML)//qd usa innerHTML poxa a marcar html tudo com formatação, qd usa innerText poxar so texto
+
+       /* var d = window.document.getElementById('msg')
+        d.style.background = 'gray'
+        d.innerText = 'Ola Mundo'
+        p1.style.color = 'white'
+        corpo.style.background = 'ligthblue'*/
+
+        //outro forma mais recent de acessar os objeto dento de javascript e usando querySeletor:
+        var d = window.document.querySelector('div#msg')
+        d.style.background = 'gray'
+        d.innerText = 'Ola Mundo...'
 
     </script>
 </body>

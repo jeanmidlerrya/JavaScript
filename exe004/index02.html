@@ -7,19 +7,23 @@
 </head>
 <body>
     <h1>Sistema de sinalização</h1>
+    <h2>Velocidadde maxima 50 km/h</h2>
     <p>
         A velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
-        <input type="button" value="Verificar" onclick="Calcular()">
-        <div id="res">Resulatado:</div>
+        <input type="button" value="Verificar" onclick="calcular()">
+        <div id="res">ATENÃO...</div>
     </p>
 
     <script>
-        function Calcular() {
+        function calcular() {
             var txtv = window.document.querySelector('input#txtvel')
-            var res = window.document.getElementById('div#res')
+            var res = window.document.querySelector('div#res')
             var vel = Number(txtv.value)
-
-            res.innerHTML = vel
+            res.innerHTML = `Sua velocdade atual é de <strong>${vel} km/h</strong> `
+            if (vel > 50) {
+                res.innerHTML += `<p>ATENÇAÕ você está a cima da volcidade permitida!</p>`
+            }
+            res.innerHTML += `<P>Dirija sempre com cinto de segurança!</P>`
         }
     </script>
 </body>

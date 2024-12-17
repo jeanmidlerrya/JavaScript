@@ -6,20 +6,26 @@
     <title>Identificaçao</title>
 </head>
 <body>
-    <h1>Sistem de indentificação Nacional</h1>
+    <h1>Sistema de indentificação Nacional</h1>
+    <form action="cadastro.php" method="post" autocomplete="on"></form>
     <p>
-        <input type="text" name="txt1" id="txt1'">
+        De qual pais você é: <input type="text" name="txt1" id="txt1">
         <input type="button" value="verificar" onclick="verifique()">
+        <div id="res"></div>
     </p>
-    <div id="res"></div>
+    
 
     <script>
         function verifique() {
-            var iden = window.document.querySelector('input#txt1')
+            var ident = window.document.querySelector('input#txt1')
             var res = window.document.querySelector('div#res')
-            var idenf = Text(iden.value)
-
-            res.innerHTML = idenf
+            var idenf = String(ident.value)
+            if (idenf == 'Brasil') {
+                res.innerHTML = 'Você é BRASILEIRO(A), '
+            } else {
+                res.innerHTML = `Você é ESTRANGEIRO(A), `
+            }
+            res.innerHTML += `você nasceu em   ${idenf}! `
         }
     </script>
 </body>

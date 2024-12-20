@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de voto</title>
+</head>
+<body>
+    <h1>Sistema electoral 2024</h1>
+    <p>
+        Qual é sua idade: <input type="number" name="idade" id="idade">
+        <input type="button" value="enviar" onclick="testar()">
+        <div id="res">...</div>
+    </p>
+
+    <script>
+        function testar() {
+            var idad = window.document.querySelector('input#idade')
+            var res = window.document.querySelector('div#res')
+            var vot = Number(idad.value)
+
+            if (idad == 16) {
+                res.innerHTML = 'Não vota'
+            } else if (idad < 18 || idad > 65) {
+                res.innerHTML = 'Voto Opcional'
+            } else {
+                res.innerHTML = 'Voto Obligatorio'
+            }
+        }
+    </script>
+</body>
+</html>

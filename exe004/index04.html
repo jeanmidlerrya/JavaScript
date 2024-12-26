@@ -6,23 +6,27 @@
     <title>Sistema de voto</title>
 </head>
 <body>
-    <h1>Sistema electoral 2024</h1>
+    <h1>Sistema Eleitoral 2024</h1>
     <p>
         Qual é sua idade: <input type="number" name="idade" id="idade">
-        <input type="button" value="enviar" onclick="testar()">
-        <div id="res">...</div>
+        <input type="button" value="Enviar" onclick="testar()">
     </p>
+    <div id="res">...</div>
 
     <script>
         function testar() {
-            var idad = window.document.querySelector('input#idade')
-            var res = window.document.querySelector('div#res')
-            var vot = Number(idad.value)
+            var idad = document.querySelector('#idade'); // Obter o elemento do input
+            var res = document.querySelector('#res');    // Obter o elemento do resultado
+            var vot = Number(idad.value);                // Converter o valor do input para número
 
-            if (idad == '16') {
-                res.innerHTML =+ `Voto Opcional`
+            if (isNaN(vot) || vot <= 0) {                // Verificar entrada inválida
+                res.innerHTML = `Por favor, insira uma idade válida.`;
+            } else if (vot < 16) {
+                res.innerHTML = `Não vota.`;
+            } else if (vot >= 16 && vot < 18 || vot >= 70) {
+                res.innerHTML = `Voto opcional.`;
             } else {
-                res.innerHTML = `Não vota`
+                res.innerHTML = `Voto obrigatório.`;
             }
         }
     </script>

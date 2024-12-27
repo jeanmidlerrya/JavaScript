@@ -16,8 +16,8 @@
     <script>
         function testar() {
             var idad = document.querySelector('#idade'); // Obter o elemento do input
-            var res = document.querySelector('#res');    // Obter o elemento do resultado
-            var vot = Number(idad.value);                // Converter o valor do input para número
+            var res = document.querySelector('#res');  // Obter o elemento doresultado
+            var vot = Number(idad.value);    // Converter o valor do input para número
 
             if (isNaN(vot) || vot <= 0) {                // Verificar entrada inválida
                 res.innerHTML = `Por favor, insira uma idade válida.`;
